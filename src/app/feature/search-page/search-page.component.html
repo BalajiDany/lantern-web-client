@@ -1,0 +1,55 @@
+<div class="h-100">
+
+    <!-- Search Panel or Result Panel -->
+    <div *ngIf="showPageSearch; then searchPanel; else resultPanel;"></div>
+
+    <!-- Search Panel -->
+    <ng-template #searchPanel>
+        <div class="position-relative search-panel">
+            <!-- Logo -->
+            <app-logo></app-logo>
+
+            <!-- Search Field -->
+            <app-search-field [(searchQuery)]="searchQuery" (triggerSearch)="performSearch()"></app-search-field>
+
+            <!-- Search Types Tab -->
+            <app-search-types-tab variant="pills" alignment="center" [(activeTabIndex)]="activeTabIndex"
+                (activeTabIndexChange)="onActiveTabIndexChange()"></app-search-types-tab>
+        </div>
+    </ng-template>
+
+    <!-- Result Panel -->
+    <ng-template #resultPanel>
+
+        <!-- Search Types Tab -->
+        <div class="fixed-top container-fluid bg-white w-100">
+            <app-search-types-tab alignment="justify" [(activeTabIndex)]="activeTabIndex"
+                (activeTabIndexChange)="onActiveTabIndexChange()">
+            </app-search-types-tab>
+        </div>
+
+        <!-- Search Result Area -->
+        <div class="result-area container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-7">
+                    <!-- For Temp Container -->
+                    <app-search-result [searchQuery]="searchQuery" [searchTypeIndex]="activeTabIndex"></app-search-result>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <!-- For Temp Container -->
+                    <!-- Note: Remove bg-light -->
+                    <div class="bg-light h-100">
+                        <app-logo></app-logo>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <!-- Floating Button -->
+    <div *ngIf="!showPageSearch; then searchFloatingButton;"></div>
+    <ng-template #searchFloatingButton>
+        <app-search-floating-button (triggerClick)="showSearchPanel()"></app-search-floating-button>
+    </ng-template>
+
+</div>

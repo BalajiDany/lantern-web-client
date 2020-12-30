@@ -1,0 +1,19 @@
+svg.clouds {
+    position: fixed;
+    left: -230px;
+    bottom: -160px;
+    width: 1920px;
+    z-index: -100;
+}
+
+div.main-page {
+    height: calc(100vh - 56px);
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+.custom-footer {
+    background-color: #eee;
+}

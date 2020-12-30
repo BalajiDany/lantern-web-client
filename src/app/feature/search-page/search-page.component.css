@@ -1,0 +1,9 @@
+div.search-panel {
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+div.result-area {
+    padding-top: 56px;
+    padding-bottom: 56px;
+}

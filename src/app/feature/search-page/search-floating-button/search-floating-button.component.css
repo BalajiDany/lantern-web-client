@@ -1,0 +1,11 @@
+button.search-floating-button {
+    width: 56px;
+    height: 56px;
+    bottom: 72px;
+    right: 34px;
+}
+
+svg.button-icon {
+    position: relative;
+    top: -2px;
+}

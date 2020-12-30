@@ -1,0 +1,13 @@
+div.search-field {
+    max-width: 720px;
+}
+
+button.search-button {
+    right: 0;
+    top: 0;
+}
+
+svg.button-icon {
+    position: relative;
+    top: -2px;
+}

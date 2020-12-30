@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* NavBar [small-nav] */
+
+.small-nav a.nav-link {
+    padding: .25rem .75rem !important;
+}
+
+/* Tooltip Adjustment @Override */
+
+.bs-tooltip-top {
+    top: -4px!important;
+}
+
+.bs-tooltip-bottom {
+    top: 4px!important;
+}
+
+.bs-tooltip-left {
+    left: -4px!important;
+}
+
+.bs-tooltip-right {
+    left: 4px!important;
+}
+
+/* Tooltip Custom Color [tooltip-left-muted] */
+
+.tooltip-left-muted .tooltip-inner {
+    background-color: #212529!important;
+}
+
+.tooltip-left-muted .arrow::before {
+    border-left-color: #212529!important;
+}
