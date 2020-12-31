@@ -19,7 +19,7 @@ export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
     @Input() searchTypeIndex = 1;
 
     public searchTypeModel: SearchTypeEntity;
-    public SearchTypeEnum: EngineType;
+    public SearchTypeEnum = EngineType;
 
     private isAlive: Subject<void> = new Subject();
 

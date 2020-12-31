@@ -1,0 +1,6 @@
+<button type="button" class="search-floating-button btn btn-primary rounded-circle position-fixed" (click)="onClick()"
+    [ngbTooltip]="buttonTooltip" [openDelay]="400" placement="left" tooltipClass="tooltip-left-muted">
+    <app-svg-icon class="button-icon" icon="search" size="1.4"></app-svg-icon>
+</button>
+
+<ng-template #buttonTooltip>Search ( {{ shortcut | stringReplace: '\\.' : ' + '}} )</ng-template>

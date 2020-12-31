@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { AboutComponent } from './about/about.component';
 import { LogoComponent } from './logo/logo.component';
+import { SvgIconComponent } from './svg-icon/svg-icon.component';
 
 @NgModule({
     declarations: [
-        AboutComponent,
         LogoComponent,
+        SvgIconComponent,
     ],
     exports: [
-        AboutComponent,
         LogoComponent,
+        SvgIconComponent,
     ],
     imports: [
         CommonModule,

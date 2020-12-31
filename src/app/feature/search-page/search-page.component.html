@@ -21,29 +21,23 @@
     <!-- Result Panel -->
     <ng-template #resultPanel>
 
-        <!-- Search Types Tab -->
-        <div class="fixed-top container-fluid bg-white w-100">
-            <app-search-types-tab alignment="justify" [(activeTabIndex)]="activeTabIndex"
-                (activeTabIndexChange)="onActiveTabIndexChange()">
-            </app-search-types-tab>
-        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="allowed-max-width w-100">
 
-        <!-- Search Result Area -->
-        <div class="result-area container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-7">
-                    <!-- For Temp Container -->
-                    <app-search-result [searchQuery]="searchQuery" [searchTypeIndex]="activeTabIndex"></app-search-result>
-                </div>
-                <div class="col-sm-12 col-md-5">
-                    <!-- For Temp Container -->
-                    <!-- Note: Remove bg-light -->
-                    <div class="bg-light h-100">
-                        <app-logo></app-logo>
-                    </div>
-                </div>
+                <!-- Search Type Tabs -->
+                <app-search-types-tab class="w-100 bg-white position-fixed allowed-max-width search-type-tab"
+                    alignment="justify" [(activeTabIndex)]="activeTabIndex"
+                    (activeTabIndexChange)="onActiveTabIndexChange()">
+                </app-search-types-tab>
+
+                <!-- Search Result Panel -->
+                <app-search-result class="result-panel d-block" [searchQuery]="searchQuery"
+                    [searchTypeIndex]="activeTabIndex">
+                </app-search-result>
+
             </div>
         </div>
+
     </ng-template>
 
     <!-- Floating Button -->

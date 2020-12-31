@@ -1,0 +1,17 @@
+<div class="search-field d-flex container pt-4">
+
+    <!-- Search Input -->
+    <div class="flex-grow-1 position-relative">
+        <input class="form-control pr-5" type="text" placeholder="Search" aria-label="Search" #searchField [(ngModel)]="searchQuery"
+            (ngModelChange)="onTextChange()" (keyup.enter)="onEnterPress()">
+        <button type="button" class="search-button btn position-absolute text-muted" (click)="onEnterPress()">
+            <app-svg-icon class="button-icon" icon="search" size="1.2"></app-svg-icon>
+        </button>
+    </div>
+
+    <!-- Search Setting -->
+    <button type="button" class="btn ml-1 text-muted position-inline">
+        <app-svg-icon class="button-icon" icon="gear_fill" size="1.2"></app-svg-icon>
+    </button>
+
+</div>

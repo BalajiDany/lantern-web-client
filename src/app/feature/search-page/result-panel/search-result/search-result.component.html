@@ -1,0 +1,37 @@
+<div>
+
+    <div *ngTemplateOutlet="searchOutputType"></div>
+
+    <ng-template #searchOutputType [ngSwitch]="searchTypeModel.type">
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.GENERAL">
+            <app-search-result-general [searchQuery]="searchQuery">
+            </app-search-result-general>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.CODE">
+            <app-search-result-code [searchQuery]="searchQuery">
+            </app-search-result-code>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.TORRENT">
+            <app-search-result-torrent [searchQuery]="searchQuery">
+            </app-search-result-torrent>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.VIDEO">
+            <app-search-result-video [searchQuery]="searchQuery">
+            </app-search-result-video>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.NEWS">
+            <h3>Under Development</h3>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="SearchTypeEnum.MAP">
+            <h3>Under Development</h3>
+        </ng-container>
+
+    </ng-template>
+    
+</div>

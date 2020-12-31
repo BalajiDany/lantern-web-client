@@ -8,31 +8,46 @@ import { HotkeysManagerService } from 'src/app/service/hotkeys-manager.service';
 import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
 import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
 import { SearchEngineGeneralService } from 'src/app/service/search-engine-general.service';
-import { ComponentModule as BaseComponentModule } from 'src/app/component/component.module';
+import { ComponentModule } from 'src/app/component/component.module';
 
 import { SearchPageComponent } from './search-page.component';
 import { SearchPageRoutingModule } from './search-page-routing.module';
-import { SearchFieldComponent } from './search-field/search-field.component';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { SearchTypesTabComponent } from './search-types-tab/search-types-tab.component';
-import { SearchFloatingButtonComponent } from './search-floating-button/search-floating-button.component';
-import { SearchQueryEmptyComponent } from './search-result/search-query-empty/search-query-empty.component';
-import { SearchResultEmptyComponent } from './search-result/search-result-empty/search-result-empty.component';
+import { SearchFieldComponent } from './search-panel/search-field/search-field.component';
+import { SearchResultComponent } from './result-panel/search-result/search-result.component';
+import { SearchTypesTabComponent } from './component/search-types-tab/search-types-tab.component';
+import { SearchFloatingButtonComponent } from './result-panel/search-floating-button/search-floating-button.component';
+import { SearchResultGeneralComponent } from './result-panel/search-result/search-result-general/search-result-general.component';
+import { SearchResultCodeComponent } from './result-panel/search-result/search-result-code/search-result-code.component';
+import { SearchResultTorrentComponent } from './result-panel/search-result/search-result-torrent/search-result-torrent.component';
+import { SearchResultVideoComponent } from './result-panel/search-result/search-result-video/search-result-video.component';
+import { SearchErrorComponent } from './component/search-error/search-error.component';
+import { SearchEmptyQueryComponent } from './component/search-empty-query/search-empty-query.component';
+import { SearchEmptyResultComponent } from './component/search-empty-result/search-empty-result.component';
+import { SearchInprogressComponent } from './component/search-inprogress/search-inprogress.component';
 
 @NgModule({
     declarations: [
+        StringReplacePipe,
+
         SearchPageComponent,
         SearchFieldComponent,
         SearchTypesTabComponent,
         SearchFloatingButtonComponent,
-        StringReplacePipe,
+
         SearchResultComponent,
-        SearchResultEmptyComponent,
-        SearchQueryEmptyComponent,
+        SearchResultGeneralComponent,
+        SearchResultCodeComponent,
+        SearchResultTorrentComponent,
+        SearchResultVideoComponent,
+
+        SearchErrorComponent,
+        SearchEmptyQueryComponent,
+        SearchEmptyResultComponent,
+        SearchInprogressComponent,
     ],
     imports: [
         SearchPageRoutingModule,
-        BaseComponentModule,
+        ComponentModule,
         CommonModule,
         FormsModule,
         NgbModule,

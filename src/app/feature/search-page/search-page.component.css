@@ -3,7 +3,15 @@ div.search-panel {
     transform: translateY(-50%);
 }
 
-div.result-area {
-    padding-top: 56px;
+.allowed-max-width {
+    max-width: 740px;
+}
+
+.search-type-tab {
+    z-index: 100;
+}
+
+.result-panel {
+    padding-top: 58px;
     padding-bottom: 56px;
 }

@@ -7,7 +7,7 @@ button.search-button {
     top: 0;
 }
 
-svg.button-icon {
+.button-icon {
     position: relative;
     top: -2px;
 }

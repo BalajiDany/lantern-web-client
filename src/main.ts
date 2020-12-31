@@ -10,3 +10,7 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.error(err));
+
+
+// Listing all contributions
+// 1. https://icons.getbootstrap.com/

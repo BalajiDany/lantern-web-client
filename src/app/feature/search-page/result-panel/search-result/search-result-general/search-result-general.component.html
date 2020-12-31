@@ -1,0 +1,60 @@
+<div class="list-group pt-4">
+
+    <div *ngTemplateOutlet="generalResultOutput"></div>
+
+    <ng-template #generalResultOutput [ngSwitch]="this.requestState">
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
+            <app-search-empty-query></app-search-empty-query>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_EMPTY">
+            <app-search-empty-result></app-search-empty-result>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_ERROR">
+            <app-search-error></app-search-error>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_IN_PROGRESS">
+            <app-search-inprogress></app-search-inprogress>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_FOUND">
+            <div *ngTemplateOutlet="generalResult"></div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #generalResult>
+
+        <div *ngFor="let searchResult of searchResults" class="list-group-item flex-column align-items-start">
+
+            <!-- Header -->
+            <div class="w-100 border-bottom">
+                <h5 class="text-truncate text-primary font-weight-normal lead mb-1">
+                    <a href="{{ searchResult.url }}" target="_blank" rel="noopener">
+                        {{ searchResult.title }}
+                    </a>
+                </h5>
+                <small class="d-block text-muted text-truncate pb-2">
+                    {{ searchResult.url }}
+                </small>
+            </div>
+
+            <!-- Body -->
+            <p class="text-justify text-dark mb-1 main-content">
+                {{ searchResult.content }}
+            </p>
+
+            <!-- Footer -->
+            <div class="float-right mb-2">
+                <span *ngFor="let engine of searchResult.engines" class="badge badge-pill badge-info">
+                    {{ engine }}
+                </span>
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
