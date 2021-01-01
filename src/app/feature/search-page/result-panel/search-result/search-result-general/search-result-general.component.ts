@@ -1,12 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { take, takeUntil } from 'rxjs/operators';
-import { filter } from 'rxjs/operators';
-import { SearchEngineGeneralService } from 'src/app/service/search-engine-general.service';
-import { RequestState } from 'src/app/type/request-state';
-import { isEmptyString } from 'src/app/util/object-util';
-import { SearchResultGeneralCoreViewModel } from 'src/app/view-model/search-view-model';
+import { filter, takeUntil } from 'rxjs/operators';
+import { Component, Input, OnInit } from '@angular/core';
 
+import { isEmptyString } from 'src/app/util/object-util';
+import { RequestState } from 'src/app/type/request-state';
+import { SearchResultGeneralCoreViewModel } from 'src/app/view-model/search-view-model';
+import { SearchEngineGeneralService } from 'src/app/service/search-engine-general.service';
 
 @Component({
     selector: 'app-search-result-general',
@@ -38,7 +37,7 @@ export class SearchResultGeneralComponent implements OnInit {
     private watchForTheResult(searchQuery: string): void {
         this.searchEngineGeneralService.resultSubject
             .pipe(takeUntil(this.isAlive), filter(({ query }) => query === searchQuery))
-            .subscribe(({ searchResults }) => this.searchResults = searchResults);
+            .subscribe(({ searchResults }) => setTimeout(() => this.searchResults = searchResults, 0));
 
         this.searchEngineGeneralService.statusSubject
             .pipe(takeUntil(this.isAlive))

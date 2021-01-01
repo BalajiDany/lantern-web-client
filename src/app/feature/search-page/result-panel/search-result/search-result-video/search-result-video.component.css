@@ -1,0 +1,13 @@
+.main-content {
+    font-size: 0.96em;
+}
+
+.value-tag {
+    font-weight: 500!important;
+}
+
+.video-thumbnail {
+    width: 128px;
+    height: 72px;
+    border-radius: 0.6em;
+}

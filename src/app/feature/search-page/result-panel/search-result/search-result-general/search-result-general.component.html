@@ -31,28 +31,17 @@
         <div *ngFor="let searchResult of searchResults" class="list-group-item flex-column align-items-start">
 
             <!-- Header -->
-            <div class="w-100 border-bottom">
-                <h5 class="text-truncate text-primary font-weight-normal lead mb-1">
-                    <a href="{{ searchResult.url }}" target="_blank" rel="noopener">
-                        {{ searchResult.title }}
-                    </a>
-                </h5>
-                <small class="d-block text-muted text-truncate pb-2">
-                    {{ searchResult.url }}
-                </small>
-            </div>
+            <app-search-result-card-title [url]="searchResult.url" [title]="searchResult.title">
+            </app-search-result-card-title>
 
             <!-- Body -->
-            <p class="text-justify text-dark mb-1 main-content">
+            <p class="text-justify text-dark mb-2 main-content">
                 {{ searchResult.content }}
             </p>
 
             <!-- Footer -->
-            <div class="float-right mb-2">
-                <span *ngFor="let engine of searchResult.engines" class="badge badge-pill badge-info">
-                    {{ engine }}
-                </span>
-            </div>
+            <app-search-result-card-engines [engines]="searchResult.engines">
+            </app-search-result-card-engines>
 
         </div>
 

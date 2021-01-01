@@ -55,7 +55,10 @@ export class SearchEngineGeneralService {
         const { searchResults = [] } = viewModel;
         const searchState = searchResults.length > 0 ? RequestState.SEARCH_RESULT_FOUND : RequestState.SEARCH_RESULT_EMPTY;
 
-        this.previousSearchQuery = searchRequest.query;
+
+        if (searchState === RequestState.SEARCH_RESULT_FOUND) {
+            this.previousSearchQuery = searchRequest.query;
+        }
         this.statusSubject.next(searchState);
         this.resultSubject.next({ ...viewModel, query: searchRequest.query });
     }

@@ -1,1 +1,71 @@
-<p>search-result-torrent works!</p>
+<div class="list-group pt-4">
+
+    <div *ngTemplateOutlet="torrentResultOutput"></div>
+
+    <ng-template #torrentResultOutput [ngSwitch]="this.requestState">
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
+            <app-search-empty-query></app-search-empty-query>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_EMPTY">
+            <app-search-empty-result></app-search-empty-result>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_ERROR">
+            <app-search-error></app-search-error>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_IN_PROGRESS">
+            <app-search-inprogress></app-search-inprogress>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_FOUND">
+            <div *ngTemplateOutlet="torrentResult"></div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #torrentResult>
+
+        <div *ngFor="let searchResult of searchResults" class="list-group-item flex-column align-items-start">
+
+            <!-- Header -->
+            <app-search-result-card-title [url]="searchResult.torrentUrl" [title]="searchResult.torrentName">
+            </app-search-result-card-title>
+
+            <div class="pr-4">
+                <p class="d-inline pr-2">{{ searchResult.uploadedDate }}</p>
+                <a attr.href="{{ searchResult.magneticLink | safeUrlPipe }}" rel="noopener">
+                    Magnetic Link
+                </a>
+            </div>
+
+            <div class="pb-1">
+                <div class="d-inline pr-4">
+                    <app-svg-icon class="align-text-bottom" icon="lightning_fill" size="0.9"></app-svg-icon>
+                    <p class="d-inline pl-1">Seeder :</p>
+                    <p class="value-tag d-inline pl-1 text-dark">{{ searchResult.seeders }}</p>
+                </div>
+
+                <div class="d-inline pr-4">
+                    <app-svg-icon class="align-text-bottom" icon="cloud_arrow_down_fill" size="0.9"></app-svg-icon>
+                    <p class="d-inline pl-2">Leecher :</p>
+                    <p class="value-tag d-inline pl-1 text-dark">{{ searchResult.leechers }}</p>
+                </div>
+
+                <div class="d-inline pr-4">
+                    <app-svg-icon class="align-text-bottom" icon="inbox_fill" size="0.9"></app-svg-icon>
+                    <p class="d-inline pl-2">File Size :</p>
+                    <p class="value-tag d-inline pl-1 text-dark">{{ searchResult.torrentSize}}</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <app-search-result-card-engines [engines]="searchResult.engines">
+            </app-search-result-card-engines>
+
+        </div>
+
+    </ng-template>
+</div>

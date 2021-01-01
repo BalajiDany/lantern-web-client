@@ -22,6 +22,13 @@ export enum SvgIcons {
     EMOJI_EXPRESSIONLESS = 'emoji_expressionless',
     EMOJI_HEART_EYES = 'emoji_heart_eyes',
 
+    LINK = 'link',
     SEARCH = 'search',
     GEAR_FILL = 'gear_fill',
+    PLAY_BTN_FILL = 'play_btn_fill',
+    BROADCAST = 'broadcast',
+    INBOX_FILL= 'inbox_fill',
+    INBOXES_FILL = 'inboxes_fill',
+    LIGHTNING_FILL = 'lightning_fill',
+    CLOUD_ARROW_DOWN_FILL = 'cloud_arrow_down_fill',
 }

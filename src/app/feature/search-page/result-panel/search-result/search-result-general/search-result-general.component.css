@@ -1,12 +1,5 @@
-span.badge {
-    margin-left: 5px;
-    padding-bottom: 6px;
-}
-
-div.header {
-    cursor: pointer;
-}
-
 .main-content {
     overflow-wrap: break-word;
+    font-size: 0.96em;
+    margin-bottom: 6px !important;
 }

@@ -1,1 +1,67 @@
-<p>search-result-video works!</p>
+<div class="list-group pt-4">
+
+    <div *ngTemplateOutlet="torrentResultOutput"></div>
+
+    <ng-template #torrentResultOutput [ngSwitch]="this.requestState">
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
+            <app-search-empty-query></app-search-empty-query>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_EMPTY">
+            <app-search-empty-result></app-search-empty-result>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_ERROR">
+            <app-search-error></app-search-error>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_IN_PROGRESS">
+            <app-search-inprogress></app-search-inprogress>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_FOUND">
+            <div *ngTemplateOutlet="torrentResult"></div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #torrentResult>
+
+        <div *ngFor="let searchResult of searchResults" class="list-group-item flex-column align-items-start">
+
+            <!-- Header -->
+            <app-search-result-card-title [url]="searchResult.url" [title]="searchResult.title">
+            </app-search-result-card-title>
+
+            <!-- Body -->
+            <div class="d-flex pb-2">
+                 <div class="video-thumbnail mt-1">
+                     <img class="video-thumbnail" [src]="searchResult.thumbnailUrl" [alt]="searchResult.title">
+                </div>
+                <div class="ml-3">
+                    <div class="mb-1 main-content">
+                        <p class="value-tag d-inline text-dark">{{ searchResult.uploadedDate }}</p>
+                        <p class="d-inline pl-1 text-dark">{{ searchResult.content }}</p>
+                    </div>
+                    <div class="">
+                        <app-svg-icon class="align-text-bottom" icon="play_btn_fill" size="0.9"></app-svg-icon>
+                        <p class="d-inline pl-2">Duration :</p>
+                        <p class="value-tag d-inline pl-1 text-dark">{{ searchResult.duration }}</p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- <p class="text-justify text-dark mb-2 main-content">
+                {{ searchResult.thumbnailUrl }}
+            </p> -->
+
+            <!-- Footer -->
+            <app-search-result-card-engines [engines]="searchResult.engines">
+            </app-search-result-card-engines>
+
+        </div>
+
+    </ng-template>
+</div>

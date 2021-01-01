@@ -1,1 +1,47 @@
-<p>search-result-code works!</p>
+<div class="list-group pt-4">
+
+    <div *ngTemplateOutlet="codeResultOutput"></div>
+
+    <ng-template #codeResultOutput [ngSwitch]="this.requestState">
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
+            <app-search-empty-query></app-search-empty-query>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_EMPTY">
+            <app-search-empty-result></app-search-empty-result>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_ERROR">
+            <app-search-error></app-search-error>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_IN_PROGRESS">
+            <app-search-inprogress></app-search-inprogress>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_RESULT_FOUND">
+            <div *ngTemplateOutlet="codeResult"></div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #codeResult>
+        <div *ngFor="let searchResult of searchResults" class="list-group-item flex-column align-items-start">
+
+            <!-- Header -->
+            <app-search-result-card-title [url]="searchResult.url" [title]="searchResult.title">
+            </app-search-result-card-title>
+
+            <!-- Body -->
+            <p class="text-justify text-dark mb-2 main-content">
+                {{ searchResult.content }}
+            </p>
+
+            <!-- Footer -->
+            <app-search-result-card-engines [engines]="searchResult.engines"></app-search-result-card-engines>
+
+        </div>
+
+    </ng-template>
+</div>
