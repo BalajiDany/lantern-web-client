@@ -3,7 +3,7 @@ node_js:
   - "12.0"
 branches:
   only:
-    - master
+    - main
 before_script:
   - npm install -g @angular/cli
 script:
