@@ -41,21 +41,16 @@
                 </div>
                 <div class="ml-3">
                     <div class="mb-1 main-content">
-                        <p class="value-tag d-inline text-dark">{{ searchResult.uploadedDate }}</p>
-                        <p class="d-inline pl-1 text-dark">{{ searchResult.content }}</p>
+                        <p class="value-tag d-inline custom-text-dark">{{ searchResult.uploadedDate }}</p>
+                        <p class="d-inline pl-1 custom-text-dark">{{ searchResult.content }}</p>
                     </div>
                     <div class="">
                         <app-svg-icon class="align-text-bottom" icon="play_btn_fill" size="0.9"></app-svg-icon>
                         <p class="d-inline pl-2">Duration :</p>
-                        <p class="value-tag d-inline pl-1 text-dark">{{ searchResult.duration }}</p>
+                        <p class="value-tag d-inline pl-1 custom-text-dark">{{ searchResult.duration }}</p>
                     </div>
                 </div>
             </div>
-            
-
-            <!-- <p class="text-justify text-dark mb-2 main-content">
-                {{ searchResult.thumbnailUrl }}
-            </p> -->
 
             <!-- Footer -->
             <app-search-result-card-engines [engines]="searchResult.engines">

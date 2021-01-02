@@ -9,7 +9,14 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
+<body data-theme="light" class="d-none">
+    <script>
+        (function() {
+            let currentTheme = localStorage.getItem('data-theme') || 'light';
+            document.body.setAttribute('data-theme', currentTheme);
+            document.body.removeAttribute('class');
+        })();
+    </script>
     <app-root></app-root>
 </body>
 

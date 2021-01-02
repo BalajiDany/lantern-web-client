@@ -20,24 +20,18 @@ export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
 
     public searchTypeModel: SearchTypeEntity;
     public SearchTypeEnum = EngineType;
+    public sanitizedSearchQuery = '';
 
     private isAlive: Subject<void> = new Subject();
 
     constructor(
         private searchTypeProviderService: SearchTypeProviderService,
-        private searchEngineGeneralService: SearchEngineGeneralService,
         private searchEngineCoreService: SearchEngineCoreService,
     ) {
         this.searchTypeModel = this.searchTypeProviderService.getDefaultSearchTypes();
     }
 
     ngOnInit(): void {
-        this.searchEngineGeneralService.resultSubject
-            .pipe(takeUntil(this.isAlive))
-            .subscribe(response => console.log(response));
-        this.searchEngineGeneralService.statusSubject
-            .pipe(takeUntil(this.isAlive))
-            .subscribe(response => console.log(response));
     }
 
     ngOnDestroy(): void {
@@ -45,11 +39,17 @@ export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
         this.isAlive.complete();
     }
 
-    ngOnChanges({ searchTypeIndex }: SimpleChanges): void {
+    ngOnChanges({ searchTypeIndex, searchQuery }: SimpleChanges): void {
         if (searchTypeIndex) {
             const { currentValue } = searchTypeIndex;
             this.searchTypeModel = this.searchTypeProviderService.getSearchTypesByIndex(currentValue);
         }
+
+        if (searchQuery) {
+            const { currentValue = '' } = searchQuery;
+            this.sanitizedSearchQuery = currentValue.trim();
+        }
+
         this.performSearch();
     }
 

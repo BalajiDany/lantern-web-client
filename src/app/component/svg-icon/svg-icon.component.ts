@@ -19,8 +19,9 @@ export enum SvgIcons {
     EMOJI_DIZZY = 'emoji_dizzy',
     EMOJI_ANGRY = 'emoji_angry',
     EMOJI_LAUGHING = 'emoji_laughing',
-    EMOJI_EXPRESSIONLESS = 'emoji_expressionless',
     EMOJI_HEART_EYES = 'emoji_heart_eyes',
+    EMOJI_SUNGLASSES = 'emoji_sunglasses',
+    EMOJI_EXPRESSIONLESS = 'emoji_expressionless',
 
     LINK = 'link',
     SEARCH = 'search',

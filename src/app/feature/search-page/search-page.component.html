@@ -16,6 +16,9 @@
             <app-search-types-tab variant="pills" alignment="center" [(activeTabIndex)]="activeTabIndex"
                 (activeTabIndexChange)="onActiveTabIndexChange()"></app-search-types-tab>
         </div>
+
+        <app-dark-mode-switch class="dark-mode-switch"></app-dark-mode-switch>
+
     </ng-template>
 
     <!-- Result Panel -->
@@ -25,7 +28,7 @@
             <div class="allowed-max-width w-100">
 
                 <!-- Search Type Tabs -->
-                <app-search-types-tab class="w-100 bg-white position-fixed allowed-max-width search-type-tab"
+                <app-search-types-tab class="w-100 custom-background position-fixed allowed-max-width search-type-tab"
                     alignment="justify" [(activeTabIndex)]="activeTabIndex"
                     (activeTabIndexChange)="onActiveTabIndexChange()">
                 </app-search-types-tab>

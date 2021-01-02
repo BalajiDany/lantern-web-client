@@ -21,6 +21,7 @@ import { SearchFieldComponent } from './search-panel/search-field/search-field.c
 import { SearchResultComponent } from './result-panel/search-result/search-result.component';
 import { SearchTypesTabComponent } from './component/search-types-tab/search-types-tab.component';
 import { SearchInprogressComponent } from './component/search-inprogress/search-inprogress.component';
+import { SearchComingSoonComponent } from './component/search-coming-soon/search-coming-soon.component';
 import { SearchEmptyQueryComponent } from './component/search-empty-query/search-empty-query.component';
 import { SearchEmptyResultComponent } from './component/search-empty-result/search-empty-result.component';
 import { SearchFloatingButtonComponent } from './result-panel/search-floating-button/search-floating-button.component';
@@ -33,8 +34,8 @@ import { SearchResultTorrentComponent } from './result-panel/search-result/searc
 
 @NgModule({
     declarations: [
-        StringReplacePipe,
         SafeUrlPipe,
+        StringReplacePipe,
 
         SearchPageComponent,
         SearchFieldComponent,
@@ -42,33 +43,34 @@ import { SearchResultTorrentComponent } from './result-panel/search-result/searc
         SearchFloatingButtonComponent,
 
         SearchResultComponent,
-        SearchResultGeneralComponent,
         SearchResultCodeComponent,
-        SearchResultTorrentComponent,
         SearchResultVideoComponent,
+        SearchResultTorrentComponent,
+        SearchResultGeneralComponent,
 
         SearchErrorComponent,
+        SearchComingSoonComponent,
         SearchEmptyQueryComponent,
-        SearchEmptyResultComponent,
         SearchInprogressComponent,
+        SearchEmptyResultComponent,
         SearchResultCardTitleComponent,
         SearchResultCardEnginesComponent,
     ],
     imports: [
-        SearchPageRoutingModule,
-        ComponentModule,
-        CommonModule,
-        FormsModule,
         NgbModule,
+        FormsModule,
+        CommonModule,
+        ComponentModule,
+        SearchPageRoutingModule,
     ],
     providers: [
+        HotkeysManagerService,
         SearchEngineCoreService,
         SearchEngineCodeService,
         SearchEngineVideoService,
         SearchEngineGeneralService,
         SearchEngineTorrentService,
         SearchTypeProviderService,
-        HotkeysManagerService,
     ]
 })
 export class SearchPageModule { }
