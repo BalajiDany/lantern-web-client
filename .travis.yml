@@ -8,4 +8,4 @@ before_script:
   - npm install -g @angular/cli
 script:
   - npm install
-  - npm run prod-biuld
+  - npm run prod-build
