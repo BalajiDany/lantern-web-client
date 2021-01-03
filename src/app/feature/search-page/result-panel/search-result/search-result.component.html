@@ -5,23 +5,19 @@
     <ng-template #searchOutputType [ngSwitch]="searchTypeModel.type">
 
         <ng-container *ngSwitchCase="SearchTypeEnum.GENERAL">
-            <app-search-result-general [searchQuery]="sanitizedSearchQuery">
-            </app-search-result-general>
+            <app-search-result-general></app-search-result-general>
         </ng-container>
 
         <ng-container *ngSwitchCase="SearchTypeEnum.CODE">
-            <app-search-result-code [searchQuery]="sanitizedSearchQuery">
-            </app-search-result-code>
+            <app-search-result-code></app-search-result-code>
         </ng-container>
 
         <ng-container *ngSwitchCase="SearchTypeEnum.TORRENT">
-            <app-search-result-torrent [searchQuery]="sanitizedSearchQuery">
-            </app-search-result-torrent>
+            <app-search-result-torrent></app-search-result-torrent>
         </ng-container>
 
         <ng-container *ngSwitchCase="SearchTypeEnum.VIDEO">
-            <app-search-result-video [searchQuery]="sanitizedSearchQuery">
-            </app-search-result-video>
+            <app-search-result-video></app-search-result-video>
         </ng-container>
 
         <ng-container *ngSwitchCase="SearchTypeEnum.NEWS">

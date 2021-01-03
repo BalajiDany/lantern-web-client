@@ -13,22 +13,22 @@ import { SearchEngineGeneralService } from 'src/app/service/search-engine-genera
     templateUrl: './search-result.component.html',
     styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
+export class SearchResultComponent implements OnInit, OnDestroy {
 
     @Input() searchQuery = '';
     @Input() searchTypeIndex = 1;
 
     public searchTypeModel: SearchTypeEntity;
     public SearchTypeEnum = EngineType;
-    public sanitizedSearchQuery = '';
 
     private isAlive: Subject<void> = new Subject();
 
     constructor(
-        private searchTypeProviderService: SearchTypeProviderService,
         private searchEngineCoreService: SearchEngineCoreService,
     ) {
-        this.searchTypeModel = this.searchTypeProviderService.getDefaultSearchTypes();
+        this.searchEngineCoreService.onSearch()
+            .pipe(takeUntil(this.isAlive))
+            .subscribe(({ searchType }) => this.searchTypeModel = searchType);
     }
 
     ngOnInit(): void {
@@ -37,28 +37,6 @@ export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
     ngOnDestroy(): void {
         this.isAlive.next();
         this.isAlive.complete();
-    }
-
-    ngOnChanges({ searchTypeIndex, searchQuery }: SimpleChanges): void {
-        if (searchTypeIndex) {
-            const { currentValue } = searchTypeIndex;
-            this.searchTypeModel = this.searchTypeProviderService.getSearchTypesByIndex(currentValue);
-        }
-
-        if (searchQuery) {
-            const { currentValue = '' } = searchQuery;
-            this.sanitizedSearchQuery = currentValue.trim();
-        }
-
-        this.performSearch();
-    }
-
-    private performSearch(): void {
-        const searchRequest = {
-            query: this.searchQuery,
-            searchType: this.searchTypeModel,
-        };
-        this.searchEngineCoreService.search(searchRequest);
     }
 
 }

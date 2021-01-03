@@ -2,7 +2,7 @@
 
     <div *ngTemplateOutlet="torrentResultOutput"></div>
 
-    <ng-template #torrentResultOutput [ngSwitch]="this.requestState">
+    <ng-template #torrentResultOutput [ngSwitch]="requestState">
 
         <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
             <app-search-empty-query></app-search-empty-query>

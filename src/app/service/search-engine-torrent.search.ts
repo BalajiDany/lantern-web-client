@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
+import { SearchEngineCoreService } from './search-engine-core.service';
+
+import { EngineType } from 'src/app/type/engine-type';
 import { isEmptyString } from 'src/app/util/object-util';
 import { safeUnsubscribe } from 'src/app/util/rxjs-utils';
 import { RequestState } from 'src/app/type/request-state';
 import { environment } from 'src/environments/environment';
 import { EngineResultType } from 'src/app/type/engine-result-type';
 import { SearchRequestEntity } from 'src/app/entity/search-request-entity';
-import { SearchResultTorrentCoreViewModel, SearchResultTorrentViewModel } from 'src/app/view-model/search-view-model';
 import { SearchResponseTorrentEntity, SearchResultTorrentCoreEntity } from 'src/app/entity/search-response-entity';
-
+import { SearchResultTorrentCoreViewModel, SearchResultTorrentViewModel } from 'src/app/view-model/search-view-model';
 
 @Injectable()
 export class SearchEngineTorrentService {
@@ -24,9 +27,13 @@ export class SearchEngineTorrentService {
 
     constructor(
         private httpClient: HttpClient,
+        private searchEngineCoreService: SearchEngineCoreService,
     ) {
         this.resultSubject = new BehaviorSubject<SearchResultTorrentViewModel>({});
         this.statusSubject = new BehaviorSubject<RequestState>(RequestState.SEARCH_REQUEST_EMPTY);
+        this.searchEngineCoreService.onSearch()
+            .pipe(filter(({ searchType }) => searchType.type === EngineType.TORRENT))
+            .subscribe(searchRequest => this.search(searchRequest));
     }
 
     public search(searchRequest: SearchRequestEntity): void {

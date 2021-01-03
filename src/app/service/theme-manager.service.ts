@@ -12,7 +12,6 @@ export class ThemeManagerService {
         const storedTheme = localStorage.getItem('data-theme');
         this.currentTheme = (storedTheme as Theme) || Theme.LIGHT;
         this.storeTheme(this.currentTheme);
-        console.log('theme', this.currentTheme);
     }
 
     public getCurrentTheme(): Theme {

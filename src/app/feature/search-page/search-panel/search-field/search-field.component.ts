@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
+import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
 
 @Component({
     selector: 'app-search-field',
@@ -7,14 +9,15 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Outp
 })
 export class SearchFieldComponent implements OnInit, AfterViewInit {
 
-    @Output() triggerSearch = new EventEmitter<string>();
-
-    @Input() searchQuery = '';
-    @Output() searchQueryChange: EventEmitter<string> = new EventEmitter<string>();
-
     @ViewChild('searchField') searchField: ElementRef;
 
-    constructor() { }
+    public searchQuery = '';
+
+    constructor(
+        private searchEngineCoreService: SearchEngineCoreService,
+    ) {
+        this.searchQuery = this.searchEngineCoreService.getSearchQuery();
+    }
 
     ngOnInit(): void {
     }
@@ -24,10 +27,10 @@ export class SearchFieldComponent implements OnInit, AfterViewInit {
     }
 
     public onEnterPress(): void {
-        this.triggerSearch.emit(this.searchQuery);
+        this.searchEngineCoreService.doSearch();
     }
 
     public onTextChange(): void {
-        this.searchQueryChange.emit(this.searchQuery);
+        this.searchEngineCoreService.setSearchQuery(this.searchQuery);
     }
 }

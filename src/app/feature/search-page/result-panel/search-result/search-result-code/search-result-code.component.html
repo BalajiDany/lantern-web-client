@@ -2,7 +2,7 @@
 
     <div *ngTemplateOutlet="codeResultOutput"></div>
 
-    <ng-template #codeResultOutput [ngSwitch]="this.requestState">
+    <ng-template #codeResultOutput [ngSwitch]="requestState">
 
         <ng-container *ngSwitchCase="RequestStateEnum.SEARCH_REQUEST_EMPTY">
             <app-search-empty-query></app-search-empty-query>

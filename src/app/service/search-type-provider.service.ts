@@ -35,14 +35,14 @@ const DEFAULT_SEARCH_TYPE = EngineType.GENERAL;
 @Injectable()
 export class SearchTypeProviderService {
 
-    private defaultSearchType: SearchTypeEntity;
+    private selectedSearchType: SearchTypeEntity;
 
     constructor() {
         const defaultSearchType = SEARCH_TYPES.find(searchType => searchType.type === DEFAULT_SEARCH_TYPE);
-        this.defaultSearchType = getDefault(defaultSearchType, SEARCH_TYPES[0]);
+        this.selectedSearchType = getDefault(defaultSearchType, SEARCH_TYPES[0]);
     }
 
-    getSearchTypes(): SearchTypeEntity[] {
+    getAllSearchTypes(): SearchTypeEntity[] {
         return SEARCH_TYPES;
     }
 
@@ -50,8 +50,16 @@ export class SearchTypeProviderService {
         return SEARCH_TYPES.find(searchType => searchType.index === index);
     }
 
-    getDefaultSearchTypes(): SearchTypeEntity {
-        return this.defaultSearchType;
+    getSelectedSearchType(): SearchTypeEntity {
+        return this.selectedSearchType;
     }
 
+    setSelectedSearchType(searchType: SearchTypeEntity): void {
+        this.selectedSearchType = searchType;
+    }
+
+    setSelectedSearchTypeByIndex(index: number): void {
+        const searchType = this.getSearchTypesByIndex(index);
+        this.setSelectedSearchType(searchType);
+    }
 }

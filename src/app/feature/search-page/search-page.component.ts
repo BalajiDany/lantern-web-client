@@ -1,6 +1,8 @@
+import { Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { filter, takeUntil } from 'rxjs/operators';
 
-import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
 
 @Component({
     selector: 'app-search-page',
@@ -9,38 +11,30 @@ import { SearchTypeProviderService } from 'src/app/service/search-type-provider.
 })
 export class SearchPageComponent implements OnInit {
 
-    public searchQuery = '';
-    public showPageSearch = true;
-    public activeTabIndex: number;
+    public enableSearchPanel = true;
+
+    private isAlive: Subject<void> = new Subject();
 
     constructor(
-        private searchTypeProviderService: SearchTypeProviderService,
+        private searchEngineCoreService: SearchEngineCoreService,
     ) {
-        const defaultSearchType = this.searchTypeProviderService.getDefaultSearchTypes();
-        if (defaultSearchType) {
-            this.activeTabIndex = defaultSearchType.index;
-        }
+        this.searchEngineCoreService.onSearch()
+            .pipe(
+                takeUntil(this.isAlive),
+                filter(() => this.enableSearchPanel)
+            )
+            .subscribe(() => this.showResultPanel());
     }
 
     ngOnInit(): void {
     }
 
-    public onActiveTabIndexChange(): void {
-        this.performSearch();
-    }
-
-    public performSearch(): void {
-        if (this.searchQuery && this.searchQuery.trim().length > 0) {
-            this.showResultPanel();
-        }
-    }
-
     public showSearchPanel(): void {
-        this.showPageSearch = true;
+        this.enableSearchPanel = true;
     }
 
     public showResultPanel(): void {
-        this.showPageSearch = false;
+        this.enableSearchPanel = false;
     }
 
 }

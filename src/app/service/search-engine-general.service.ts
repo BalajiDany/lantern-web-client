@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
+import { SearchEngineCoreService } from './search-engine-core.service';
+
+import { EngineType } from 'src/app/type/engine-type';
 import { RequestState } from 'src/app/type/request-state';
 import { safeUnsubscribe } from 'src/app/util/rxjs-utils';
 import { environment } from 'src/environments/environment';
@@ -23,9 +27,13 @@ export class SearchEngineGeneralService {
 
     constructor(
         private httpClient: HttpClient,
+        private searchEngineCoreService: SearchEngineCoreService,
     ) {
         this.resultSubject = new BehaviorSubject<SearchResultGeneralViewModel>({});
         this.statusSubject = new BehaviorSubject<RequestState>(RequestState.SEARCH_REQUEST_EMPTY);
+        this.searchEngineCoreService.onSearch()
+            .pipe(filter(({ searchType }) => searchType.type === EngineType.GENERAL))
+            .subscribe(searchRequest => this.search(searchRequest));
     }
 
     public search(searchRequest: SearchRequestEntity): void {
