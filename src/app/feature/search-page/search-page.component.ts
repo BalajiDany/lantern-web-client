@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { filter, takeUntil } from 'rxjs/operators';
 
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 
 @Component({
     selector: 'app-search-page',

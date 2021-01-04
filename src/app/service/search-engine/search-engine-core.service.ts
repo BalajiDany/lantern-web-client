@@ -2,7 +2,7 @@ import { filter } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { SearchTypeProviderService } from './search-type-provider.service';
+import { SearchTypeProviderService } from '../search-type-provider.service';
 
 import { isEmptyObject } from 'src/app/util/object-util';
 import { SearchRequestEntity } from 'src/app/entity/search-request-entity';

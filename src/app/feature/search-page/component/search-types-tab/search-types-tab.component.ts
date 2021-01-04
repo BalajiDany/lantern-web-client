@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { SearchTypeEntity } from 'src/app/entity/search-type-entity';
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
 
 @Component({

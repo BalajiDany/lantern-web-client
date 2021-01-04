@@ -5,8 +5,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { isEmptyString } from 'src/app/util/object-util';
 import { RequestState } from 'src/app/type/request-state';
 import { SearchResultGeneralCoreViewModel } from 'src/app/view-model/search-view-model';
-import { SearchEngineGeneralService } from 'src/app/service/search-engine-general.service';
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineGeneralService } from 'src/app/service/search-engine/search-engine-general.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 
 @Component({
     selector: 'app-search-result-general',

@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 
 @Component({
     selector: 'app-search-field',
@@ -8,6 +8,8 @@ import { SearchEngineCoreService } from 'src/app/service/search-engine-core.serv
     styleUrls: ['./search-field.component.css']
 })
 export class SearchFieldComponent implements OnInit, AfterViewInit {
+
+    @Input() enableSetting = true;
 
     @ViewChild('searchField') searchField: ElementRef;
 

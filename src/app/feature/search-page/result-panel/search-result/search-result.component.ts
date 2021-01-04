@@ -4,9 +4,9 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@
 
 import { EngineType } from 'src/app/type/engine-type';
 import { SearchTypeEntity } from 'src/app/entity/search-type-entity';
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
-import { SearchEngineGeneralService } from 'src/app/service/search-engine-general.service';
+import { SearchEngineGeneralService } from 'src/app/service/search-engine/search-engine-general.service';
 
 @Component({
     selector: 'app-search-result',

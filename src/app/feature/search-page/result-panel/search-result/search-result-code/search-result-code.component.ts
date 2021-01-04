@@ -4,9 +4,9 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { RequestState } from 'src/app/type/request-state';
 import { isEmptyString } from 'src/app/util/object-util';
-import { SearchEngineCodeService } from 'src/app/service/search-engine-code.service';
+import { SearchEngineCodeService } from 'src/app/service/search-engine/search-engine-code.service';
 import { SearchResultCodeCoreViewModel } from 'src/app/view-model/search-view-model';
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 
 @Component({
     selector: 'app-search-result-code',

@@ -4,9 +4,9 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { isEmptyString } from 'src/app/util/object-util';
 import { RequestState } from 'src/app/type/request-state';
-import { SearchEngineCoreService } from 'src/app/service/search-engine-core.service';
+import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { SearchResultTorrentCoreViewModel } from 'src/app/view-model/search-view-model';
-import { SearchEngineTorrentService } from 'src/app/service/search-engine-torrent.search';
+import { SearchEngineTorrentService } from 'src/app/service/search-engine/search-engine-torrent.search';
 
 @Component({
     selector: 'app-search-result-torrent',
