@@ -1,6 +1,6 @@
-import { Subject } from 'rxjs/internal/Subject';
+import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { RequestState } from 'src/app/type/request-state';
 import { isEmptyString } from 'src/app/util/object-util';
