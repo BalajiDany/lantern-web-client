@@ -1,0 +1,7 @@
+button.close-button {
+    outline: 0;
+}
+
+div.modal-body {
+    max-height: calc(100vh - 240px);
+}

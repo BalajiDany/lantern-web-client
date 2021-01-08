@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SafeUrlPipe } from 'src/app/pipe/safe-url-pipe';
 import { StringReplacePipe } from 'src/app/pipe/string-replace.pipe';
@@ -23,6 +23,7 @@ import { SearchTypesTabComponent } from './component/search-types-tab/search-typ
 import { SearchInprogressComponent } from './component/search-inprogress/search-inprogress.component';
 import { SearchComingSoonComponent } from './component/search-coming-soon/search-coming-soon.component';
 import { SearchEmptyQueryComponent } from './component/search-empty-query/search-empty-query.component';
+import { LocalSettingModalComponent } from '../modal/local-setting-modal/local-setting-modal.component';
 import { SearchEmptyResultComponent } from './component/search-empty-result/search-empty-result.component';
 import { SearchFloatingButtonComponent } from './result-panel/search-floating-button/search-floating-button.component';
 import { SearchResultCodeComponent } from './result-panel/search-result/search-result-code/search-result-code.component';
@@ -36,6 +37,7 @@ import { SearchResultTorrentComponent } from './result-panel/search-result/searc
     declarations: [
         SafeUrlPipe,
         StringReplacePipe,
+        LocalSettingModalComponent,
 
         SearchPageComponent,
         SearchFieldComponent,
@@ -61,6 +63,7 @@ import { SearchResultTorrentComponent } from './result-panel/search-result/searc
         FormsModule,
         CommonModule,
         ComponentModule,
+        ReactiveFormsModule,
         SearchPageRoutingModule,
     ],
     providers: [

@@ -2,6 +2,7 @@ import { filter } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+import { LocalSettingsService } from '../settings/local-settings.service';
 import { SearchTypeProviderService } from '../search-type-provider.service';
 
 import { isEmptyObject } from 'src/app/util/object-util';
@@ -15,6 +16,7 @@ export class SearchEngineCoreService {
 
     constructor(
         private searchTypeProviderService: SearchTypeProviderService,
+        private localSettingsService: LocalSettingsService,
     ) {
         this.searchRequestSubject = new BehaviorSubject<SearchRequestEntity>({});
     }
@@ -22,7 +24,15 @@ export class SearchEngineCoreService {
     public doSearch(): void {
         const query = this.searchQuery.trim();
         const searchType = this.searchTypeProviderService.getSelectedSearchType();
-        this.searchRequestSubject.next({ query, searchType });
+        const { location, language } = this.localSettingsService.getSettings();
+
+        const searchQuery: SearchRequestEntity = {
+            query, searchType,
+            location: location.locationId,
+            language: language.languageId,
+        }
+
+        this.searchRequestSubject.next(searchQuery);
     }
 
     public onSearch(): Observable<SearchRequestEntity> {

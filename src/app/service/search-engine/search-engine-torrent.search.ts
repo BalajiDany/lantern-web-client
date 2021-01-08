@@ -37,16 +37,17 @@ export class SearchEngineTorrentService {
     }
 
     public search(searchRequest: SearchRequestEntity): void {
-        if (isEmptyString(searchRequest.query)) {
+        const { query, location, language } = searchRequest;
+        if (isEmptyString(query)) {
             this.statusSubject.next(RequestState.SEARCH_REQUEST_EMPTY);
             return;
         }
-        if (this.previousSearchQuery === searchRequest.query) {
+        if (this.previousSearchQuery === this.getSearchKey(searchRequest)) {
             this.statusSubject.next(RequestState.SEARCH_RESULT_FOUND);
             return;
         }
 
-        const params = { query: searchRequest.query };
+        const params = { query, location, language };
         this.statusSubject.next(RequestState.SEARCH_IN_PROGRESS);
         safeUnsubscribe(this.searchRequestSubscription);
 
@@ -64,10 +65,14 @@ export class SearchEngineTorrentService {
         const searchState = searchResults.length > 0 ? RequestState.SEARCH_RESULT_FOUND : RequestState.SEARCH_RESULT_EMPTY;
 
         if (searchState === RequestState.SEARCH_RESULT_FOUND) {
-            this.previousSearchQuery = searchRequest.query;
+            this.previousSearchQuery = this.getSearchKey(searchRequest);
         }
         this.statusSubject.next(searchState);
         this.resultSubject.next({ ...viewModel, query: searchRequest.query });
+    }
+
+    private getSearchKey(searchRequestEntity: SearchRequestEntity): string {
+        return searchRequestEntity.query + ' --' + searchRequestEntity.location;
     }
 
     private convertEntityToViewModel(searchResultEntity: SearchResponseTorrentEntity = {}): SearchResultTorrentViewModel {

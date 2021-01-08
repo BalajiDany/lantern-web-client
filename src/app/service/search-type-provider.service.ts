@@ -1,36 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { EngineType } from 'src/app/type/engine-type';
-import { getDefault } from 'src/app/util/object-util';
 import { SearchTypeEntity } from 'src/app/entity/search-type-entity';
-
-const SEARCH_TYPES: SearchTypeEntity[] = [
-    {
-        index: 1,
-        type: EngineType.GENERAL,
-    },
-    {
-        index: 2,
-        type: EngineType.CODE,
-    },
-    {
-        index: 3,
-        type: EngineType.TORRENT,
-    },
-    {
-        index: 4,
-        type: EngineType.VIDEO,
-    },
-    {
-        index: 5,
-        type: EngineType.NEWS,
-    },
-    {
-        index: 6,
-        type: EngineType.MAP,
-    },
-];
-const DEFAULT_SEARCH_TYPE = EngineType.GENERAL;
+import { SearchTypeConstant } from 'src/app/constant/search-type-constant';
 
 @Injectable()
 export class SearchTypeProviderService {
@@ -38,16 +9,15 @@ export class SearchTypeProviderService {
     private selectedSearchType: SearchTypeEntity;
 
     constructor() {
-        const defaultSearchType = SEARCH_TYPES.find(searchType => searchType.type === DEFAULT_SEARCH_TYPE);
-        this.selectedSearchType = getDefault(defaultSearchType, SEARCH_TYPES[0]);
+        this.selectedSearchType = SearchTypeConstant.DEFAULT_SEARCH_TYPE;
     }
 
     getAllSearchTypes(): SearchTypeEntity[] {
-        return SEARCH_TYPES;
+        return SearchTypeConstant.SEARCH_TYPES;
     }
 
     getSearchTypesByIndex(index: number): SearchTypeEntity {
-        return SEARCH_TYPES.find(searchType => searchType.index === index);
+        return SearchTypeConstant.getTypeByIndex(index);
     }
 
     getSelectedSearchType(): SearchTypeEntity {
