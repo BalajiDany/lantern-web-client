@@ -1,0 +1,24 @@
+<div class="modal-header border-bottom-0">
+    <h4 class="modal-title">Language</h4>
+    <button type="button" class="close-button close border-0" aria-label="Close" (click)="cancelSetting()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body py-0 px-4">
+    <form [formGroup]="localSettingFormGroup">
+        <div class="row py-1 px-3" *ngFor="let languages of supportedLanguages | pairsPipe : 2">
+
+            <div class="col-6" *ngFor="let language of languages">
+                <input class="form-check-input" type="radio" formControlName="language"
+                    id="{{ language.languageId }}-id" value="{{ language.languageId }}">
+                <label class="form-check-label" for="{{ language.languageId }}-id">
+                    {{ language.languageName }}
+                </label>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="modal-footer border-top-0">
+    <button type="button" class="btn btn-primary" (click)="saveSetting()">Save</button>
+</div>

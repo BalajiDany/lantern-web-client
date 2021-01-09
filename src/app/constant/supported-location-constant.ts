@@ -3,16 +3,16 @@ import { SupportedLocationEntity } from 'src/app/entity/supported-location-entit
 export class SupportedLocationConstant {
 
     public static SUPPORTED_LOCATIONS: SupportedLocationEntity[] = [
-        { locationId: 'US', locationName: 'United States' },
+        { locationId: 'BR', locationName: 'Brazil' },
         { locationId: 'CN', locationName: 'China' },
-        { locationId: 'JP', locationName: 'Japan' },
+        { locationId: 'FR', locationName: 'France' },
         { locationId: 'DE', locationName: 'Germany' },
         { locationId: 'IN', locationName: 'India' },
-        { locationId: 'GB', locationName: 'United Kingdom' },
-        { locationId: 'KR', locationName: 'South Korea' },
-        { locationId: 'BR', locationName: 'Brazil' },
-        { locationId: 'FR', locationName: 'France' },
         { locationId: 'IT', locationName: 'Italy' },
+        { locationId: 'JP', locationName: 'Japan' },
+        { locationId: 'KR', locationName: 'South Korea' },
+        { locationId: 'GB', locationName: 'United Kingdom' },
+        { locationId: 'US', locationName: 'United States' },
     ];
 
     public static DEFAULT_SUPPORTED_LOCATION = SupportedLocationConstant.SUPPORTED_LOCATIONS

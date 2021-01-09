@@ -1,0 +1,8 @@
+<div class="input-group mb-2 mr-sm-2 input-group-sm">
+    <input type="text" class="form-control" [placeholder]="placeholder" [value]="value" [disabled]="disabled">
+    <div *ngIf="icon" class="icon-field-button icon-field-button-sm input-group-append" (click)="onIconClick()">
+        <div class="input-group-text">
+            <app-svg-icon [icon]="icon" [size]="1" class="position-relative icon-field-button-svg"></app-svg-icon>
+        </div>
+    </div>
+</div>

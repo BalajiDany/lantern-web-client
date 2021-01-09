@@ -3,7 +3,6 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "assets/style/custom-color.css";
 @import "assets/style/dark-mode.css";
-
 /* Over All Scroll */
 
 body {
@@ -42,4 +41,17 @@ body {
 
 .tooltip-left-muted .arrow::before {
     border-left-color: #212529!important;
+}
+
+/* Focus Outlie */
+
+.no-focus-outline:focus {
+    outline: 0!important;
+    box-shadow: none!important;
+}
+
+/* Radio Button */
+
+.form-check-input {
+    margin-top: .4rem!important;
 }
