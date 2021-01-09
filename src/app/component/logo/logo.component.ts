@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
     selector: 'app-logo',
     templateUrl: './logo.component.html',
@@ -8,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class LogoComponent implements OnInit {
 
     // TODO Centralize the logo (Including in index.html)
-    public logo = 'Eniac';
+    public logo = environment.engineName;
+    public version = environment.engineVersion;
 
     constructor() { }
 

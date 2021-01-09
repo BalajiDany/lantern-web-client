@@ -6,11 +6,11 @@ import { filter } from 'rxjs/operators';
 import { SearchEngineCoreService } from './search-engine-core.service';
 
 import { EngineType } from 'src/app/type/engine-type';
-import { isEmptyString } from 'src/app/util/object-util';
 import { safeUnsubscribe } from 'src/app/util/rxjs-utils';
 import { RequestState } from 'src/app/type/request-state';
 import { environment } from 'src/environments/environment';
 import { EngineResultType } from 'src/app/type/engine-result-type';
+import { getDefault, isEmptyString } from 'src/app/util/object-util';
 import { SearchRequestEntity } from 'src/app/entity/search-request-entity';
 import { SearchResponseTorrentEntity, SearchResultTorrentCoreEntity } from 'src/app/entity/search-response-entity';
 import { SearchResultTorrentCoreViewModel, SearchResultTorrentViewModel } from 'src/app/view-model/search-view-model';
@@ -85,12 +85,15 @@ export class SearchEngineTorrentService {
             const { seeders = 0, leechers = 0} = resultEntity;
             const { category, uploadedDate } = resultEntity;
 
-            mappedViewModel[torrentUrl] = {
+            const preResultEntity = getDefault(mappedViewModel[magneticLink], {});
+            const { engines: preEngines = [] } = preResultEntity;
+
+            mappedViewModel[magneticLink] = {
                 torrentName, torrentSize,
                 torrentUrl, magneticLink,
                 category, uploadedDate,
                 seeders, leechers,
-                engines: [engineName],
+                engines: [...preEngines, engineName],
             };
         };
 

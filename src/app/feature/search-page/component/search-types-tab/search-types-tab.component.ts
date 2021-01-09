@@ -31,7 +31,10 @@ export class SearchTypesTabComponent implements OnInit {
 
     public onActiveTabIndexChange(event: number): void {
         this.searchTypeProviderService.setSelectedSearchTypeByIndex(event);
-        this.searchEngineCoreService.doSearch();
+
+        if (this.variant === 'tabs') {
+            this.searchEngineCoreService.doSearch();
+        }
     }
 
 }

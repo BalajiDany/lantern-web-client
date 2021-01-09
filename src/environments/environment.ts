@@ -4,6 +4,8 @@
 
 export const environment = {
     production: false,
+    engineName: 'Eniac',
+    engineVersion: '0.0.1',
     baseUrl: 'http://localhost:8080/eniac',
 };
 

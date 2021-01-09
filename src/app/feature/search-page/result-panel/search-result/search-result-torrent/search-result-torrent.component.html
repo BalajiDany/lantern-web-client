@@ -35,7 +35,10 @@
             </app-search-result-card-title>
 
             <div class="pr-4">
-                <p class="d-inline pr-2">{{ searchResult.uploadedDate }}</p>
+                <p class="value-tag d-inline custom-text-dark">{{ searchResult.category }}</p>
+                <span class="px-2">·</span>
+                <p class="d-inline">{{ searchResult.uploadedDate }}</p>
+                <span class="px-2">·</span>
                 <a attr.href="{{ searchResult.magneticLink | safeUrlPipe }}" rel="noopener">
                     Magnetic Link
                 </a>
