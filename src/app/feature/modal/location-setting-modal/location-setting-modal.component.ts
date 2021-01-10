@@ -6,6 +6,7 @@ import { LocalSettingsEntity } from 'src/app/entity/setting-entity';
 import { SupportedLocationEntity } from 'src/app/entity/supported-location-entity';
 import { LocalSettingsService } from 'src/app/service/settings/local-settings.service';
 import { SupportedLocationConstant } from 'src/app/constant/supported-location-constant';
+import { EngineConfigurationService } from 'src/app/service/engine-configuration.service';
 
 @Component({
     selector: 'app-location-setting-modal',
@@ -23,6 +24,7 @@ export class LocationSettingModalComponent implements OnInit {
     constructor(
         private ngbActiveModal: NgbActiveModal,
         private localSettingsService: LocalSettingsService,
+        private engineConfigurationService: EngineConfigurationService,
     ) {
         this.loadSettings();
     }
@@ -33,7 +35,11 @@ export class LocationSettingModalComponent implements OnInit {
     public saveSetting(): void {
         const saveEntity = this.getSaveEntity();
         this.localSettingsService.persistSetting(saveEntity);
-        this.ngbActiveModal.close();
+        this.engineConfigurationService.resetLocationBasedEngines()
+            .subscribe(
+                () => this.ngbActiveModal.close(),
+                () => this.ngbActiveModal.dismiss(),
+            );
     }
 
     private getSaveEntity(): LocalSettingsEntity {

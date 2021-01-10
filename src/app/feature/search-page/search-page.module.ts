@@ -8,10 +8,11 @@ import { SafeUrlPipe } from 'src/app/pipe/safe-url-pipe';
 import { StringReplacePipe } from 'src/app/pipe/string-replace.pipe';
 import { ComponentModule } from 'src/app/component/component.module';
 import { HotkeysManagerService } from 'src/app/service/hotkeys-manager.service';
+import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
+import { EngineConfigurationService } from 'src/app/service/engine-configuration.service';
 import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { SearchEngineCodeService } from 'src/app/service/search-engine/search-engine-code.service';
 import { SearchEngineVideoService } from 'src/app/service/search-engine/search-engine-video.service';
-import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
 import { SearchEngineTorrentService } from 'src/app/service/search-engine/search-engine-torrent.search';
 import { SearchEngineGeneralService } from 'src/app/service/search-engine/search-engine-general.service';
 
@@ -77,9 +78,10 @@ import { SearchResultTorrentComponent } from './result-panel/search-result/searc
         SearchEngineCoreService,
         SearchEngineCodeService,
         SearchEngineVideoService,
+        SearchTypeProviderService,
+        EngineConfigurationService,
         SearchEngineGeneralService,
         SearchEngineTorrentService,
-        SearchTypeProviderService,
     ]
 })
 export class SearchPageModule { }
