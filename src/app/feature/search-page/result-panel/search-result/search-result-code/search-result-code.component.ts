@@ -27,12 +27,7 @@ export class SearchResultCodeComponent implements OnInit , OnDestroy {
     ) { }
 
     ngOnInit(): void {
-        const searchQuery = this.searchEngineCoreService.getSearchQuery();
-        if (isEmptyString(searchQuery)) {
-            this.requestState = RequestState.SEARCH_REQUEST_EMPTY;
-        } else {
-            this.watchForTheResult();
-        }
+        this.watchForTheResult();
     }
 
     ngOnDestroy(): void {
