@@ -6,6 +6,7 @@ import { LocalSettingsService } from 'src/app/service/settings/local-settings.se
 import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { LanguageSettingModalComponent } from 'src/app/feature/modal/language-setting-modal/language-setting-modal.component';
 import { LocationSettingModalComponent } from 'src/app/feature/modal/location-setting-modal/location-setting-modal.component';
+import { TimeRangeSettingModalComponent } from 'src/app/feature/modal/time-range-setting-modal/time-range-setting-modal.component';
 
 @Component({
     selector: 'app-search-field',
@@ -20,8 +21,10 @@ export class SearchFieldComponent implements OnInit, AfterViewInit {
 
     public searchQuery = '';
     public showSetting = false;
+
     public currentLocation = '';
     public currentLanguage = '';
+    public currentTimeRange = '';
 
     constructor(
         private modalService: NgbModal,
@@ -68,12 +71,17 @@ export class SearchFieldComponent implements OnInit, AfterViewInit {
     }
 
     public onTimeRangeClick(): void {
-        console.log('hello world');
+        const modalOptions: NgbModalOptions = {
+            centered: true,
+        };
+        this.modalService.open(TimeRangeSettingModalComponent, modalOptions)
+            .result.then(() => {}); // TODO Feature Update;
     }
 
     private refreshAllSetting(): void {
         this.refreshLanguage();
         this.refreshLocation();
+        this.refreshTimeRange();
     }
 
     private refreshLocation(): void {
@@ -84,6 +92,10 @@ export class SearchFieldComponent implements OnInit, AfterViewInit {
     private refreshLanguage(): void {
         const { language } = this.localSettingService.getSettings();
         this.currentLanguage = language.languageName;
+    }
+
+    private refreshTimeRange(): void {
+        this.currentTimeRange = 'All';
     }
 
 }

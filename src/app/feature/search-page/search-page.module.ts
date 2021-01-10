@@ -25,7 +25,6 @@ import { SearchTypesTabComponent } from './component/search-types-tab/search-typ
 import { SearchInprogressComponent } from './component/search-inprogress/search-inprogress.component';
 import { SearchComingSoonComponent } from './component/search-coming-soon/search-coming-soon.component';
 import { SearchEmptyQueryComponent } from './component/search-empty-query/search-empty-query.component';
-import { LocalSettingModalComponent } from '../modal/local-setting-modal/local-setting-modal.component';
 import { SearchEmptyResultComponent } from './component/search-empty-result/search-empty-result.component';
 import { LocationSettingModalComponent } from '../modal/location-setting-modal/location-setting-modal.component';
 import { LanguageSettingModalComponent } from '../modal/language-setting-modal/language-setting-modal.component';
@@ -36,15 +35,17 @@ import { SearchResultVideoComponent } from './result-panel/search-result/search-
 import { SearchResultCardEnginesComponent } from './component/search-result-card-engines/search-result-card-engines.component';
 import { SearchResultGeneralComponent } from './result-panel/search-result/search-result-general/search-result-general.component';
 import { SearchResultTorrentComponent } from './result-panel/search-result/search-result-torrent/search-result-torrent.component';
+import { TimeRangeSettingModalComponent } from '../modal/time-range-setting-modal/time-range-setting-modal.component';
 
 @NgModule({
     declarations: [
         PairsPipe,
         SafeUrlPipe,
         StringReplacePipe,
-        LocalSettingModalComponent,
+
         LocationSettingModalComponent,
         LanguageSettingModalComponent,
+        TimeRangeSettingModalComponent,
 
         SearchPageComponent,
         SearchFieldComponent,
