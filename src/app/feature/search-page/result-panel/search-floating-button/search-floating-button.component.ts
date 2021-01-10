@@ -17,11 +17,12 @@ export class SearchFloatingButtonComponent implements OnInit, OnDestroy {
 
     constructor(
         private hotKeysProviderService: HotkeysManagerService,
-    ) { }
-
-    ngOnInit(): void {
+    ) {
         this.hotkeyObserver = this.hotKeysProviderService.addShortcut({ keys: this.shortcut })
             .subscribe(() => this.onClick());
+    }
+
+    ngOnInit(): void {
     }
 
     ngOnDestroy(): void {

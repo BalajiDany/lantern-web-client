@@ -7,6 +7,7 @@ import { SearchTypeEntity } from 'src/app/entity/search-type-entity';
 import { SearchEngineCoreService } from 'src/app/service/search-engine/search-engine-core.service';
 import { SearchTypeProviderService } from 'src/app/service/search-type-provider.service';
 import { SearchEngineGeneralService } from 'src/app/service/search-engine/search-engine-general.service';
+import { SearchTypeConstant } from 'src/app/constant/search-type-constant';
 
 @Component({
     selector: 'app-search-result',
@@ -18,7 +19,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
     @Input() searchQuery = '';
     @Input() searchTypeIndex = 1;
 
-    public searchTypeModel: SearchTypeEntity;
+    public searchTypeModel: SearchTypeEntity = SearchTypeConstant.DEFAULT_SEARCH_TYPE;
     public SearchTypeEnum = EngineType;
 
     private isAlive: Subject<void> = new Subject();

@@ -5,7 +5,7 @@
 
     <!-- Search Panel -->
     <ng-template #searchPanel>
-        <div class="position-relative search-panel">
+        <div class="position-relative search-panel m-auto">
             <!-- Logo -->
             <app-logo></app-logo>
 
@@ -19,19 +19,20 @@
 
     <!-- Result Panel -->
     <ng-template #resultPanel>
-
-        <div class="container d-flex justify-content-center">
-            <div class="allowed-max-width w-100">
-
-                <!-- Search Type Tabs -->
-                <app-search-types-tab class="w-100 custom-background position-fixed allowed-max-width search-type-tab"
-                    alignment="justify">
-                </app-search-types-tab>
-
-                <!-- Search Result Panel -->
-                <app-search-result class="result-panel d-block">
-                </app-search-result>
-
+        <!-- Search Type Tabs -->
+        <div class="w-100 px-4 position-fixed custom-background search-type-tab">
+            <app-search-types-tab class="custom-background">
+            </app-search-types-tab>
+        </div>
+        <div class="px-4">
+            <div class="row">
+                <div class="col-lg-7 result-panel">
+                    <app-search-field></app-search-field>
+                    <app-search-result></app-search-result>
+                </div>
+                <div class="col-lg-5 result-panel">
+                    <!-- <app-logo></app-logo> -->
+                </div>
             </div>
         </div>
 

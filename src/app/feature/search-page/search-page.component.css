@@ -1,10 +1,7 @@
 div.search-panel {
+    max-width: 720px;
     top: 40%;
     transform: translateY(-50%);
-}
-
-.allowed-max-width {
-    max-width: 740px;
 }
 
 .search-type-tab {
