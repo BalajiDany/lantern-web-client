@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PairsPipe } from 'src/app/pipe/pairs-pipe';
+import { DomainPipe } from 'src/app/pipe/domain-pipe';
 import { SafeUrlPipe } from 'src/app/pipe/safe-url-pipe';
 import { StringReplacePipe } from 'src/app/pipe/string-replace.pipe';
 import { ComponentModule } from 'src/app/component/component.module';
@@ -40,6 +41,7 @@ import { TimeRangeSettingModalComponent } from '../modal/time-range-setting-moda
 @NgModule({
     declarations: [
         PairsPipe,
+        DomainPipe,
         SafeUrlPipe,
         StringReplacePipe,
 

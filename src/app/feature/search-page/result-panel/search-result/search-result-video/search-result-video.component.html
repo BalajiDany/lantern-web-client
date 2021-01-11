@@ -36,8 +36,8 @@
 
             <!-- Body -->
             <div class="d-flex pb-2">
-                 <div class="video-thumbnail mt-1">
-                     <img class="video-thumbnail" [src]="searchResult.thumbnailUrl" [alt]="searchResult.title">
+                <div class="video-thumbnail mt-1">
+                    <img class="video-thumbnail" [src]="searchResult.thumbnailUrl" [alt]="searchResult.title">
                 </div>
                 <div class="ml-3">
                     <div class="mb-1 main-content">
@@ -53,7 +53,7 @@
             </div>
 
             <!-- Footer -->
-            <app-search-result-card-engines [engines]="searchResult.engines">
+            <app-search-result-card-engines [engines]="searchResult.engines" [host]="searchResult.url | domainPipe">
             </app-search-result-card-engines>
 
         </div>

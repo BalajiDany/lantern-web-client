@@ -1,6 +1,9 @@
+<p *ngIf="host" class="float-left mb-1">
+    Source :
+    <a class="text-success" target="_blank" rel="noopener" href="//{{host}}">{{ host }}</a>
+</p>
 <div class="float-right mb-1">
-    <span *ngFor="let engine of engines"
-        class="badge badge-pill badge-secondary text-light font-weight-normal">
+    <span *ngFor="let engine of engines" class="badge badge-pill badge-secondary text-light font-weight-normal">
         {{ engine }}
     </span>
 </div>

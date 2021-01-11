@@ -40,7 +40,7 @@
             </p>
 
             <!-- Footer -->
-            <app-search-result-card-engines [engines]="searchResult.engines">
+            <app-search-result-card-engines [engines]="searchResult.engines" [host]="searchResult.url | domainPipe">
             </app-search-result-card-engines>
 
         </div>

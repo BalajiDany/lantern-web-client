@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SearchResultCardEnginesComponent implements OnInit {
 
     @Input() engines: string[];
+    @Input() host: string;
 
     constructor() { }
 
