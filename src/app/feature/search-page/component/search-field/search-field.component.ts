@@ -16,11 +16,12 @@ import { TimeRangeSettingModalComponent } from 'src/app/feature/modal/time-range
 export class SearchFieldComponent implements OnInit, AfterViewInit {
 
     @Input() enableSetting = true;
+    @Input() showSetting = false;
+    @Input() showDarkModeSwitch = true;
 
     @ViewChild('searchField') searchField: ElementRef;
 
     public searchQuery = '';
-    public showSetting = false;
 
     public currentLocation = '';
     public currentLanguage = '';

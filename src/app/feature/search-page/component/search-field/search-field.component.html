@@ -31,7 +31,7 @@
                 (iconClick)="onTimeRangeClick()">
             </app-icon-field>
         </div>
-        <div class="d-flex pt-3">
+        <div *ngIf="showDarkModeSwitch" class="d-flex pt-3">
             <div class="flex-grow-1"></div>
             <app-dark-mode-switch></app-dark-mode-switch>
             <div class="flex-grow-1"></div>
