@@ -21,19 +21,20 @@
     <ng-template #resultPanel>
         <!-- Search Type Tabs -->
         <div class="w-100 px-4 position-fixed custom-background search-type-tab">
-            <app-search-types-tab class="custom-background">
+            <app-search-types-tab class="custom-background d-block overflow-auto">
             </app-search-types-tab>
         </div>
         <div class="px-4">
-            <div class="row">
-                <div class="col-lg-5 pt-5 pb-lg-5 order-lg-2">
-                    <app-search-field [enableSetting]="false" [showDarkModeSwitch]="false" [showSetting]="true"></app-search-field>
-                    <!-- <app-logo></app-logo> -->
-                </div>
-                <div class="col-lg-7 pb-5 pt-lg-5 order-lg-1">
+            <div class="row py-sm-2">
+                <div class="col-lg-7 pt-5 pb-lg-5 pb-0 order-lg-1">
                     <!-- <app-search-field></app-search-field> -->
-                    <!-- <app-search-field [enableSetting]="false" [showDarkModeSwitch]="false" [showSetting]="true"></app-search-field> -->
+                    <app-search-field [enableSetting]="false" [showDarkModeSwitch]="false" [showSetting]="true"></app-search-field>
                     <app-search-result></app-search-result>
+                </div>
+                <div class="col-lg-5 pb-5 pt-lg-5 pt-0 pl-lg-0 order-lg-2">
+                    <!-- <app-search-field [enableSetting]="false" [showDarkModeSwitch]="false" [showSetting]="true"></app-search-field> -->
+                    <app-logo></app-logo>
+                    <!-- <ng-container *ngTemplateOutlet="afterSearchField"></ng-container> -->
                 </div>
             </div>
         </div>
@@ -42,7 +43,49 @@
     <!-- Floating Button TODO -->
     <div *ngIf="!enableSearchPanel; then searchFloatingButton;"></div>
     <ng-template #searchFloatingButton>
-        <app-search-floating-button (triggerClick)="showSearchPanel()"></app-search-floating-button>
+        <!-- <app-search-floating-button (triggerClick)="showSearchPanel()"></app-search-floating-button> -->
+    </ng-template>
+
+    <ng-template #afterSearchField>
+        <table class="table mt-3 table-sm table-borderless table-striped table-hover">
+            <caption>Engine Status</caption>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><div class="colorr"></div></td>
+                    <td>Google</td>
+                    <td>1203</td>
+                    <td>12</td>
+                    <td>
+                        <app-svg-icon icon="geo_alt_gill"></app-svg-icon>
+                    </td>
+                    <td>
+                        <app-svg-icon icon="chat_square_quote_fill"></app-svg-icon>
+                    </td>
+                    <td>
+                        <app-svg-icon icon="clock_fill"></app-svg-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>
+                        <div class="colorr"></div>
+                    </td>
+                    <td>Yahoo</td>
+                    <td>890</td>
+                    <td>8</td>
+                    <td>
+                        <app-svg-icon icon="geo_alt_gill"></app-svg-icon>
+                    </td>
+                    <td>
+                        <app-svg-icon icon="chat_square_quote_fill"></app-svg-icon>
+                    </td>
+                    <td>
+                        <app-svg-icon icon="clock_fill"></app-svg-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </ng-template>
 
 </div>

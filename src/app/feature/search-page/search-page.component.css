@@ -12,3 +12,10 @@ div.search-panel {
     padding-top: 58px;
     padding-bottom: 56px;
 }
+
+.colorr {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+}

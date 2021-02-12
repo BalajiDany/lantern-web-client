@@ -1,5 +1,5 @@
 <ul ngbNav #nav="ngbNav" [activeId]="activeTabIndex" (activeIdChange)="onActiveTabIndexChange($event)"
-    class="justify-content-{{alignment}} nav-{{variant}} small-nav pt-4 px-2">
+    class="justify-content-{{alignment}} nav-{{variant}} small-nav search-types pt-4 px-2">
 
     <li *ngFor="let searchType of searchTypes" [ngbNavItem]="searchType.index">
         <a ngbNavLink>{{searchType.type | titlecase}} </a>

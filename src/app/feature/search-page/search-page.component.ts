@@ -11,7 +11,7 @@ import { SearchEngineCoreService } from 'src/app/service/search-engine/search-en
 })
 export class SearchPageComponent implements OnInit {
 
-    public enableSearchPanel = true;
+    public enableSearchPanel = false;
 
     private isAlive: Subject<void> = new Subject();
 
