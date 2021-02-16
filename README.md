@@ -17,12 +17,12 @@
 -->
 ## Project Title Front
 
-[![Build Status](https://travis-ci.com/BalajiDany/lantern-front.svg?token=pqdDDYcKAzzpYPLgX2BL&branch=main)](https://travis-ci.com/BalajiDany/lantern-front)
-[![GitHub contributors](https://img.shields.io/github/contributors/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/graphs/contributors)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/BalajiDany/lantern-front/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/issues)
-[![GitHub forks](https://img.shields.io/github/forks/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/network)
-[![GitHub stars](https://img.shields.io/github/stars/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/stargazers)
+[![Build Status](https://travis-ci.com/BalajiDany/lantern-web-client.svg?token=pqdDDYcKAzzpYPLgX2BL&branch=main)](https://travis-ci.com/BalajiDany/lantern-web-client)
+[![GitHub contributors](https://img.shields.io/github/contributors/BalajiDany/lantern-web-client.svg)](https://github.com/BalajiDany/lantern-web-client/graphs/contributors)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/BalajiDany/lantern-web-client/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/BalajiDany/lantern-web-client.svg)](https://github.com/BalajiDany/lantern-web-client/issues)
+[![GitHub forks](https://img.shields.io/github/forks/BalajiDany/lantern-web-client.svg)](https://github.com/BalajiDany/lantern-web-client/network)
+[![GitHub stars](https://img.shields.io/github/stars/BalajiDany/lantern-web-client.svg)](https://github.com/BalajiDany/lantern-web-client/stargazers)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
 
@@ -59,7 +59,7 @@ For building and running the application you need:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/BalajiDany/lantern-front.git
+   git clone https://github.com/BalajiDany/lantern-web-client.git
    ```
 2. Navigate to the folder
    ```sh
@@ -105,7 +105,7 @@ Balaji Dhanapal - d.balaji.mc@gmail.com
 
 Pavithra Palanisamy - pavithrakowsika@gmail.com
 
-Project Link: [https://github.com/BalajiDany/lantern-front](https://github.com/BalajiDany/lantern-front)
+Project Link: [https://github.com/BalajiDany/lantern-web-client](https://github.com/BalajiDany/lantern-web-client)
 
 ## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)

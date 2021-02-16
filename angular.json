@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "lantern-front": {
+        "lantern-web-client": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/lantern-front",
+                        "outputPath": "dist/lantern-web-client",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "lantern-front:build"
+                        "browserTarget": "lantern-web-client:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "lantern-front:build:production"
+                            "browserTarget": "lantern-web-client:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "lantern-front:build"
+                        "browserTarget": "lantern-web-client:build"
                     }
                 },
                 "test": {
@@ -110,16 +110,16 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "lantern-front:serve"
+                        "devServerTarget": "lantern-web-client:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "lantern-front:serve:production"
+                            "devServerTarget": "lantern-web-client:serve:production"
                         }
                     }
                 }
             }
         }
     },
-    "defaultProject": "lantern-front"
+    "defaultProject": "lantern-web-client"
 }
