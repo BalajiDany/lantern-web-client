@@ -31,7 +31,7 @@ Web Application for [Meta search Engine](https://github.com/BalajiDany/lantern.g
 ### A Meta Search Engine
 
 Welcome :wave:, Yet another java based Meta Search Engine with a highly modular structure. It rapidly sends queries to several search engines, aggregates the results, and categorizes the result by search engines they come from.
-[To Know More](https://github.com/BalajiDany/lantern#a-meta-search-engine)
+[To Know More](https://github.com/BalajiDany/lantern-server#a-meta-search-engine)
 
 ### Built With
 List of the major library that is used in these projects. 
@@ -41,7 +41,7 @@ List of the major library that is used in these projects.
 * [Bootstrap Darkmode](https://github.com/Clashsoft/bootstrap-darkmode)
 
 ## Getting Started
-If you want to get release version, then please follow this [instruction](https://github.com/BalajiDany/lantern#installation).
+If you want to get release version, then please follow this [instruction](https://github.com/BalajiDany/lantern-server#installation).
 
 :warning: **Below instructions is only for development purpose**
 
