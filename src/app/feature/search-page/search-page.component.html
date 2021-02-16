@@ -28,7 +28,7 @@
             <div class="row py-sm-2">
                 <div class="col-lg-7 pt-5 pb-lg-5 pb-0 order-lg-1">
                     <!-- <app-search-field></app-search-field> -->
-                    <app-search-field [enableSetting]="false" [showDarkModeSwitch]="false" [showSetting]="true"></app-search-field>
+                    <app-search-field [enableSetting]="true" [showDarkModeSwitch]="false" [showSetting]="false"></app-search-field>
                     <app-search-result></app-search-result>
                 </div>
                 <div class="col-lg-5 pb-5 pt-lg-5 pt-0 pl-lg-0 order-lg-2">
@@ -43,7 +43,7 @@
     <!-- Floating Button TODO -->
     <div *ngIf="!enableSearchPanel; then searchFloatingButton;"></div>
     <ng-template #searchFloatingButton>
-        <!-- <app-search-floating-button (triggerClick)="showSearchPanel()"></app-search-floating-button> -->
+        <app-search-floating-button (triggerClick)="showSearchPanel()"></app-search-floating-button>
     </ng-template>
 
     <ng-template #afterSearchField>
