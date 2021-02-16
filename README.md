@@ -15,7 +15,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-## Project Title Front
+## Lantern Web
 
 [![Build Status](https://travis-ci.com/BalajiDany/lantern-web-client.svg?token=pqdDDYcKAzzpYPLgX2BL&branch=main)](https://travis-ci.com/BalajiDany/lantern-web-client)
 [![GitHub contributors](https://img.shields.io/github/contributors/BalajiDany/lantern-web-client.svg)](https://github.com/BalajiDany/lantern-web-client/graphs/contributors)
