@@ -26,7 +26,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
 
-Web Application for [Meta search Engine](https://github.com/BalajiDany/lantern.git)
+Web Application for [Meta search Engine](https://github.com/BalajiDany/lantern-server.git)
 
 ### A Meta Search Engine
 
