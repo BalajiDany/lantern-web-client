@@ -4,9 +4,9 @@
 
 export const environment = {
     production: false,
-    engineName: 'Eniac',
+    engineName: 'Lantern',
     engineVersion: '0.0.1',
-    baseUrl: 'http://localhost:8080/eniac',
+    baseUrl: 'http://localhost:8080/lantern',
 };
 
 /*

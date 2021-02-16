@@ -1,5 +1,5 @@
 {
-    "name": "eniac-front",
+    "name": "lantern-front",
     "version": "0.0.1",
     "scripts": {
         "ng": "ng",
@@ -7,7 +7,7 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "prod-build": "ng build --prod --aot=true --buildOptimizer=true --base-href=/eniac/",
+        "prod-build": "ng build --prod --aot=true --buildOptimizer=true --base-href=/lantern/",
         "e2e": "ng e2e"
     },
     "private": true,

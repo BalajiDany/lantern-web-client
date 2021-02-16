@@ -17,21 +17,21 @@
 -->
 ## Project Title Front
 
-[![Build Status](https://travis-ci.com/BalajiDany/eniac-front.svg?token=pqdDDYcKAzzpYPLgX2BL&branch=main)](https://travis-ci.com/BalajiDany/eniac-front)
-[![GitHub contributors](https://img.shields.io/github/contributors/BalajiDany/eniac-front.svg)](https://github.com/BalajiDany/eniac-front/graphs/contributors)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/BalajiDany/eniac-front/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/BalajiDany/eniac-front.svg)](https://github.com/BalajiDany/eniac-front/issues)
-[![GitHub forks](https://img.shields.io/github/forks/BalajiDany/eniac-front.svg)](https://github.com/BalajiDany/eniac-front/network)
-[![GitHub stars](https://img.shields.io/github/stars/BalajiDany/eniac-front.svg)](https://github.com/BalajiDany/eniac-front/stargazers)
+[![Build Status](https://travis-ci.com/BalajiDany/lantern-front.svg?token=pqdDDYcKAzzpYPLgX2BL&branch=main)](https://travis-ci.com/BalajiDany/lantern-front)
+[![GitHub contributors](https://img.shields.io/github/contributors/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/graphs/contributors)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/BalajiDany/lantern-front/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/issues)
+[![GitHub forks](https://img.shields.io/github/forks/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/network)
+[![GitHub stars](https://img.shields.io/github/stars/BalajiDany/lantern-front.svg)](https://github.com/BalajiDany/lantern-front/stargazers)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
 
-Web Application for [Meta search Engine](https://github.com/BalajiDany/eniac.git)
+Web Application for [Meta search Engine](https://github.com/BalajiDany/lantern.git)
 
 ### A Meta Search Engine
 
 Welcome :wave:, Yet another java based Meta Search Engine with a highly modular structure. It rapidly sends queries to several search engines, aggregates the results, and categorizes the result by search engines they come from.
-[To Know More](https://github.com/BalajiDany/eniac#a-meta-search-engine)
+[To Know More](https://github.com/BalajiDany/lantern#a-meta-search-engine)
 
 ### Built With
 List of the major library that is used in these projects. 
@@ -41,7 +41,7 @@ List of the major library that is used in these projects.
 * [Bootstrap Darkmode](https://github.com/Clashsoft/bootstrap-darkmode)
 
 ## Getting Started
-If you want to get release version, then please follow this [instruction](https://github.com/BalajiDany/eniac#installation).
+If you want to get release version, then please follow this [instruction](https://github.com/BalajiDany/lantern#installation).
 
 :warning: **Below instructions is only for development purpose**
 
@@ -59,7 +59,7 @@ For building and running the application you need:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/BalajiDany/eniac-front.git
+   git clone https://github.com/BalajiDany/lantern-front.git
    ```
 2. Navigate to the folder
    ```sh
@@ -105,7 +105,7 @@ Balaji Dhanapal - d.balaji.mc@gmail.com
 
 Pavithra Palanisamy - pavithrakowsika@gmail.com
 
-Project Link: [https://github.com/BalajiDany/eniac-front](https://github.com/BalajiDany/eniac-front)
+Project Link: [https://github.com/BalajiDany/lantern-front](https://github.com/BalajiDany/lantern-front)
 
 ## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
