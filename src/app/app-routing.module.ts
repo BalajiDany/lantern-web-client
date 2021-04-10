@@ -17,6 +17,11 @@ const routes: Routes = [
         loadChildren: () => import('./feature/setting-page/setting-page.module')
             .then(module => module.SettingPageModule),
     },
+    // Fallback URL
+    {
+        path: '**',
+        redirectTo: 'search',
+    },
 ];
 
 @NgModule({
