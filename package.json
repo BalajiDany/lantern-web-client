@@ -8,7 +8,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "prod-build": "ng build --prod --aot=true --buildOptimizer=true --base-href=/lantern/",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "pack": "ng build --prod --buildOptimizer=true"
     },
     "private": true,
     "dependencies": {

@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/lantern-web-client"
+  command = "npm run pack"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
